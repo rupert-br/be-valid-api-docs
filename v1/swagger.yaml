@@ -1,0 +1,35 @@
+basePath: /
+info:
+  contact:
+    email: rupert@rbd-solutions.com
+    name: Rupert Brandstätter
+  description: This is an API for Verifing Emails
+  title: Bevalid - Email Verification API
+  version: "1.0"
+paths:
+  /v1/email-verification/{email}:
+    get:
+      consumes:
+      - application/json
+      description: Get Email Verification
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your API Key here token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Email address to verify
+        in: path
+        name: email
+        required: true
+        type: string
+      - description: Include SMTP Check
+        in: query
+        name: include_smtp_check
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Get Email Verification Results
+swagger: "2.0"
